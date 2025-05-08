@@ -28,6 +28,14 @@ const bookSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  images: [
+    {
+      path: {
+        type: String,
+        required: true,
+      },
+    },
+  ],
   description: {
     type: String,
     required: true,

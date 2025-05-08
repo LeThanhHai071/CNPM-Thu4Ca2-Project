@@ -4,6 +4,11 @@ const books = [
     description: "A thrilling journey through time and space.",
     genres: [{ name: "Sci-Fi" }, { name: "Adventure" }],
     author: "John Doe",
+    images: [
+      {
+        path: "https://truyenfullmoi.com/cdn/medias/covers/1/1666-so-13-pho-mink_cover_large.jpg",
+      },
+    ],
     status: "Published",
     chapters: [
       {
@@ -24,6 +29,11 @@ const books = [
     description: "An archaeologist uncovers the secrets of an ancient city.",
     genres: [{ name: "Mystery" }, { name: "Historical" }],
     author: "Jane Smith",
+    images: [
+      {
+        path: "https://truyenfullmoi.com/cdn/medias/covers/1/1587-lanh-dia_cover_large.jpg",
+      },
+    ],
     status: "Published",
     chapters: [
       {
@@ -44,6 +54,11 @@ const books = [
     description: "A beginner's guide to learning programming.",
     genres: [{ name: "Education" }, { name: "Programming" }],
     author: "Michael Johnson",
+    images: [
+      {
+        path: "https://truyenfullmoi.com/cdn/medias/covers/0/31-dao-tinh_cover_large.jpg",
+      },
+    ],
     status: "Published",
     chapters: [
       {
@@ -64,6 +79,11 @@ const books = [
     description: "A young wizard embarks on a magical journey.",
     genres: [{ name: "Fantasy" }, { name: "Adventure" }],
     author: "Lily Brown",
+    images: [
+      {
+        path: "https://truyenfullmoi.com/cdn/medias/covers/0/45-de-ton_cover_large.jpg",
+      },
+    ],
     status: "Draft",
     chapters: [
       {
@@ -83,6 +103,11 @@ const books = [
     description: "A collection of delicious recipes from around the world.",
     genres: [{ name: "Cookbook" }, { name: "Food" }],
     author: "Sophie Lee",
+    images: [
+      {
+        path: "https://truyenfullmoi.com/cdn/medias/covers/0/63-di-the-ta-quan_cover_large.jpg",
+      },
+    ],
     status: "Published",
     chapters: [
       {
