@@ -1,8 +1,8 @@
 import express from "express";
-import { getChapter } from "../services/chapterServices.js";
+import { addComment, getChapter } from "../services/chapterServices.js";
 
 const router = express.Router("/");
 
-router.route("/:id").get(getChapter);
+router.route("/:id").get(getChapter).post(addComment);
 
 export default router;

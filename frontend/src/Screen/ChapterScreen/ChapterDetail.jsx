@@ -6,14 +6,16 @@ import axios from "axios";
 const ChapterDetail = () => {
   const location = useLocation();
   const [chapter, setChapter] = useState(null);
+  const [comment, setComment] = useState("");
+  const [comments, setComments] = useState([]);
   const [loading, setLoading] = useState(true);
   const param = getCurrentParams(location);
-  console.log(param);
   useEffect(() => {
     const fetchChapter = async () => {
       try {
         const response = await axios.get(`/api/chapters/${param}`);
         setChapter(response.data);
+        setComments(response.data.comments);
       } catch (error) {
         console.log(`Error ${error}`);
       } finally {
@@ -22,7 +24,25 @@ const ChapterDetail = () => {
     };
     fetchChapter();
   }, [param]);
-
+  const handleCommentSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const response = await axios.post(`/api/chapters/${param}`, {
+        user: "User Example",
+        chapterId: param,
+        content: comment,
+      });
+      setComments([
+        ...comments,
+        response.data.chapter.comments[
+          response.data.chapter.comments.length - 1
+        ],
+      ]);
+      setComment("");
+    } catch (error) {
+      console.log("Error submitting comment:", error);
+    }
+  };
   if (loading) {
     return (
       <div className="text-center py-10 text-gray-600 text-xl">
@@ -49,21 +69,24 @@ const ChapterDetail = () => {
       <div className="mt-10">
         <h2 className="text-2xl font-bold text-gray-800 mb-4">Bình luận</h2>
 
-        {/* <ul className="space-y-4">
-          {comments.map((comment, index) => (
-            <li key={index} className="p-4 bg-gray-100 rounded-lg">
-              <p className="font-semibold">{comment.user}</p>
-              <p>{comment.content}</p>
-            </li>
-          ))}
-        </ul> */}
+        <ul className="space-y-4">
+          {comments &&
+            comments.map((comment, index) => (
+              <li key={index} className="p-4 bg-gray-100 rounded-lg">
+                <p className="font-semibold">{comment.user}</p>
+                <p>{comment.content}</p>
+              </li>
+            ))}
+        </ul>
 
-        <form onSubmit={() => {}} className="mt-6">
+        <form onSubmit={handleCommentSubmit} className="mt-6">
           <textarea
             className="w-full p-3 border border-gray-300 rounded-md"
             rows="4"
-            value=""
-            onChange={() => {}}
+            value={comment}
+            onChange={(e) => {
+              setComment(e.target.value);
+            }}
             placeholder="Viết bình luận của bạn..."
           />
           <button

@@ -1,4 +1,18 @@
 import mongoose from "mongoose";
+const commentSchema = mongoose.Schema({
+  user: {
+    type: String,
+    required: true,
+  },
+  content: {
+    type: String,
+    required: true,
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+});
 
 const chapterSchema = mongoose.Schema({
   title: {
@@ -13,6 +27,7 @@ const chapterSchema = mongoose.Schema({
     type: String,
     required: true,
   },
+  comments: [commentSchema],
   createdAt: {
     type: Date,
     default: Date.now,

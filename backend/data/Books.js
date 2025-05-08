@@ -14,6 +14,12 @@ const books = [
       {
         title: "Chapter 1: The Beginning",
         order: 1,
+        comments: [
+          {
+            user: "Jone Doe",
+            content: "asdasdsadadad",
+          },
+        ],
         content:
           "<h1>Welcome to the Adventure</h1><p>It all starts here...</p>",
       },
@@ -39,6 +45,12 @@ const books = [
       {
         title: "Chapter 1: The Discovery",
         order: 1,
+        comments: [
+          {
+            user: "Jone Doe",
+            content: "asdasdsadadad",
+          },
+        ],
         content:
           "<h1>Finding the Hidden Map</h1><p>What will this lead to?</p>",
       },
@@ -64,6 +76,12 @@ const books = [
       {
         title: "Chapter 1: Introduction to Programming",
         order: 1,
+        comments: [
+          {
+            user: "Jone Doe",
+            content: "asdasdsadadad",
+          },
+        ],
         content: "<h1>Getting Started</h1><p>What is programming?</p>",
       },
       {
@@ -87,6 +105,12 @@ const books = [
     status: "Draft",
     chapters: [
       {
+        comments: [
+          {
+            user: "Jone Doe",
+            content: "asdasdsadadad",
+          },
+        ],
         title: "Chapter 1: A New Beginning",
         order: 1,
         content: "<h1>Magical Discovery</h1><p>The day everything changed.</p>",
@@ -113,6 +137,12 @@ const books = [
       {
         title: "Chapter 1: Italian Cuisine",
         order: 1,
+        comments: [
+          {
+            user: "Jone Doe",
+            content: "asdasdsadadad",
+          },
+        ],
         content:
           "<h1>Classic Italian Dishes</h1><p>Pasta, pizza, and more!</p>",
       },
