@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-function App() {
+const HomePage = () => {
   const [books, setBooks] = useState([]);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ function App() {
         <div className="flex justify-evenly space-x-5">
           {books.map((book) => (
             <Link
-              to={`/sp/${book._id}`}
+              to={`/books/${book._id}`}
               key={book._id}
               className="bg-white rounded-2xl shadow hover:shadow-xl transition duration-300 border border-gray-200 hover:border-gray-400 overflow-hidden m-5"
             >
@@ -46,6 +46,6 @@ function App() {
       </div>
     </>
   );
-}
+};
 
-export default App;
+export default HomePage;

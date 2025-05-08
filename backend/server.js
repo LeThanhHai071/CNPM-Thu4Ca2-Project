@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import bookroutes from "./controllers/bookroutes.js";
+import chapterroutes from "./controllers/chapterroutes.js";
 dotenv.config();
 const PORT = process.env.PORT || 5000;
 
@@ -17,7 +18,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/books", bookroutes);
-
+app.use("/api/chapters", chapterroutes);
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
